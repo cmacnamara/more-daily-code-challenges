@@ -697,6 +697,17 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 18-addChecker here:
 
+const addChecker = (nums, targetNum) => {
+  if(nums[0] >= targetNum) return false
+  for(let i = 0; i < nums.length - 1; i++) {
+    if(nums[i] < targetNum) {
+      for(let j = i + 1; j < nums.length; j++) {
+        if(nums[i] + nums[j] === targetNum) return true
+      }
+    }
+  }
+  return false
+}
 
 
 /*-----------------------------------------------------------------------------
